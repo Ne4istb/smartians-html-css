@@ -15,7 +15,9 @@
     />
 
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/feed.css" />
   </head>
+
   <body>
     <header>
       <span>Smartogram</span>
@@ -25,9 +27,64 @@
     </header>
 
     <section>
-      <article>Пост 1</article>
-      <article>Пост 2</article>
-      <article>Пост 3</article>
+      <article class="post">
+        <div class="info">
+          <img
+            src="https://html-css-course.smartians.com/captain-amerika.35706d57.jpg"
+          />
+
+          <p class="name">Superman</p>
+          <p class="location">Kyiv</p>
+        </div>
+
+        <img
+          class="picture"
+          src="https://ucarecdn.com/4c5af381-8e0d-495f-9e34-aa8878caae57/-/resize/600x/"
+          loading="lazy"
+        />
+
+        <div class="actions">
+          <p class="timestamp">30.07.2021, 10:40</p>
+          <div class="buttons">
+            <button>Нравится</button>
+            <button>В закладки</button>
+          </div>
+        </div>
+
+        <details>
+          <summary
+            ><span
+              >Комиксам в том виде, в каком мы их знаем, уже больше века.</span
+            ><span>показать</span></summary
+          >
+          <p>
+            Комиксам в том виде, в каком мы их знаем, уже больше века. Всё это
+            время они развивались, становились сложнее, оказывались в эпицентре
+            общественных конфликтов, превращались в острые социальные
+            комментарии и получали почётные премии. Но до сих пор многие (и даже
+            целый министр!) считают комиксы чем-то ущербным и пригодным только
+            для маленьких детей и глупых подростков. Мы собрали самые популярные
+            стереотипы о комиксах и попробовали объяснить, почему они неверны и
+            комиксы достойны внимания.
+          </p>
+        </details>
+
+        <div class="comments">
+          <p class="comment">
+            <span class="author">Superman</span>
+            <span class="text">Я тоже иногда почитываю)</span>
+          </p>
+
+          <p class="comment">
+            <span class="author">Hulk</span>
+            <span class="text">А я даже снимаюсь в фильмах по ним! =)</span>
+          </p>
+        </div>
+        <form class="new-comment">
+          <input placeholder="Добавить комментарий" />
+          <button>Опубликовать</button>
+        </form>
+      </article>
     </section>
 
     <footer>Copyrights Smartians 2021</footer>

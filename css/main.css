@@ -28,3 +28,7 @@ header {
 section {
   overflow: auto;
 }
+
+p {
+  margin: 0;
+}

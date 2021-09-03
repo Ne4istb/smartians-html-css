@@ -1,0 +1,70 @@
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.post {
+  width: 600px;
+  margin-bottom: 50px;
+  padding-top: 12px;
+}
+
+.post > * {
+  margin-bottom: 12px;
+  padding: 0 20px;
+}
+
+.post .info {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-column-gap: 12px;
+}
+
+.post .info img {
+  width: 32px;
+  height: 32px;
+
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.picture {
+  width: 100%;
+  padding: initial;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+}
+
+.actions .timestamp {
+  flex: 1;
+}
+
+.comments {
+  padding-top: 12px;
+}
+
+.comments .comment {
+  margin-bottom: 12px;
+}
+
+.comments .comment .name {
+  margin-right: 8px;
+}
+
+.new-comment {
+  margin: 0;
+  display: flex;
+}
+
+.new-comment input {
+  flex: 1;
+  margin-right: 8px;
+}
+
+.new-comment > * {
+  padding: 12px 0;
+}
