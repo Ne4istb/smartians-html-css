@@ -24,6 +24,13 @@ form > * {
   margin: 2em 0;
 }
 
+input,
+textarea,
+.select,
+.uploader .upload-button label {
+  transition: border 200ms;
+}
+
 .uploader {
   display: flex;
   align-items: center;
@@ -91,6 +98,7 @@ form > * {
   border: none;
 
   box-shadow: 0 2px 5px 0 var(--panel-shadow-color);
+  transition: background-color 200ms;
 }
 
 .actions button:hover {

@@ -95,6 +95,83 @@ section {
   fill: rgb(237, 73, 86);
 }
 
+.post .actions .like-button {
+  animation: heartRotate 500ms ease-out;
+}
+
+.post .actions .unlike-button {
+  animation: heartBeat 500ms ease-out;
+}
+
+@keyframes heartBeat {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(0.8);
+  }
+  40% {
+    transform: scale(1.5);
+  }
+  60% {
+    transform: scale(0.9);
+  }
+  80% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes heartRotate {
+  0% {
+    transform: scale(0.3) rotate(0deg);
+  }
+  20% {
+    transform: scale(0.5) rotate(90deg);
+  }
+  35% {
+    transform: scale(0.6) rotate(180deg);
+  }
+  45% {
+    transform: scale(0.7) rotate(270deg);
+  }
+  55% {
+    transform: scale(0.8) rotate(360deg);
+  }
+  65% {
+    transform: scale(0.85) rotate(450deg);
+  }
+  75% {
+    transform: scale(0.9) rotate(540deg);
+  }
+  85% {
+    transform: scale(0.95) rotate(630deg);
+  }
+  100% {
+    transform: scale(1) rotate(720deg);
+  }
+}
+
+.post .actions .unfav-button {
+  animation: rollDown 200ms ease-out;
+}
+
+@keyframes rollDown {
+  0% {
+    transform-origin: top;
+    transform: scaleY(0);
+  }
+  99% {
+    transform-origin: top;
+    transform: scaleY(1);
+  }
+  100% {
+    transform-origin: center;
+  }
+}
+
 .post details {
   cursor: pointer;
 }

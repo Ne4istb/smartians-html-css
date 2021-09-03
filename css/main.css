@@ -29,6 +29,8 @@ body {
   font-family: Rubik, sans-serif;
   color: var(--text-color);
   background: var(--background-color);
+
+  transition: background-color 300ms;
 }
 
 button,
@@ -101,6 +103,7 @@ p {
   font-size: 1em;
 
   position: relative;
+  transition: transform 100ms linear;
 }
 
 .icon-button svg {
@@ -112,6 +115,11 @@ p {
 .icon-button:not([data-tooltip]):hover::after,
 .icon-button:not([data-tooltip]):hover::before {
   display: none;
+}
+
+.icon-button:focus,
+.icon-button:hover {
+  transform: scale(1.1);
 }
 
 .icon-button:hover:after {
@@ -137,6 +145,22 @@ p {
   border-left: 0.5em solid var(--text-color);
   right: calc(100% + 0.25em);
   top: 0.25em;
+}
+
+.icon-button:hover:before,
+.icon-button:hover:after {
+  animation: showTooltip 2000ms ease-out;
+  transform-origin: right;
+}
+
+@keyframes showTooltip {
+  0%,
+  90% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
 }
 
 .hidden {
