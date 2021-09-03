@@ -8,11 +8,30 @@ section {
   width: 600px;
   margin-bottom: 50px;
   padding-top: 12px;
+
+  border: 1px #d4d7da solid;
+  border-radius: 4px;
 }
 
 .post > * {
   margin-bottom: 12px;
   padding: 0 20px;
+}
+
+.post .info .name,
+.post details,
+.post .comments .comment,
+.post .new-comment > * {
+  font-size: 14px;
+}
+
+.post .info .location {
+  font-size: 12px;
+}
+
+.post .info .name,
+.post .comments .comment .author {
+  font-weight: 600;
 }
 
 .post .info {
@@ -27,6 +46,8 @@ section {
 
   grid-row-start: 1;
   grid-row-end: 3;
+
+  border-radius: 50%;
 }
 
 .picture {
@@ -41,6 +62,26 @@ section {
 
 .actions .timestamp {
   flex: 1;
+
+  color: #8a959e;
+  font-size: 10px;
+}
+
+.actions .buttons button {
+  margin-left: 12px;
+}
+
+.post details {
+  cursor: pointer;
+}
+
+.post details summary {
+  list-style: none;
+}
+
+.post details summary .more {
+  cursor: pointer;
+  color: #8a959e;
 }
 
 .comments {
@@ -60,11 +101,37 @@ section {
   display: flex;
 }
 
+.new-comment > * {
+  padding: 12px 0;
+  border: none;
+}
+
 .new-comment input {
   flex: 1;
   margin-right: 8px;
+  outline: none;
 }
 
-.new-comment > * {
-  padding: 12px 0;
+.new-comment button {
+  background: none;
+  cursor: pointer;
+  color: #499fea;
+  font-weight: 600;
+}
+
+.comments,
+.new-comment {
+  border-top: 1px #d4d7da solid;
+}
+
+.invert-filter {
+  filter: invert(1);
+}
+
+.gray-filter {
+  filter: grayscale(1);
+}
+
+.sepia-filter {
+  filter: sepia(1);
 }
