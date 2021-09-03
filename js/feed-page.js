@@ -42,7 +42,14 @@ function createPostElement(post) {
 
   function fillImage() {
     const pictureElement = content.querySelector('.picture');
-    pictureElement.setAttribute('src', post.image);
+
+    const srcset = `
+      ${post.image}-/resize/400x/ 400w, 
+      ${post.image}-/resize/500x/ 500w, 
+      ${post.image}-/resize/600x/ 
+    `;
+
+    pictureElement.setAttribute('srcset', srcset);
 
     let filterClass = 'no-filter';
 
