@@ -22,6 +22,7 @@ function createPostElement(post) {
   fillImage();
   fillPostText();
   fillPublishTime();
+  configureActions();
   prepareCommentsBlock();
 
   var section = document.getElementsByTagName('section')[0];
@@ -58,6 +59,17 @@ function createPostElement(post) {
     }
 
     pictureElement.classList.add(filterClass);
+  }
+
+  function configureActions() {
+    const buttons = content.querySelectorAll('.actions .icon-button');
+    buttons.forEach(button => (button.dataset.postId = post.id));
+
+    let selectorToHide = post.isLike ? '.like-button' : '.unlike-button';
+    postElement.querySelector(selectorToHide).classList.add('hidden');
+
+    selectorToHide = post.isFavorite ? '.fav-button' : '.unfav-button';
+    postElement.querySelector(selectorToHide).classList.add('hidden');
   }
 
   function fillPostText() {
@@ -103,6 +115,8 @@ function createPostElement(post) {
         addCommentElement(commentsElement, comment)
       );
     }
+
+    content.querySelector('.add-comment-btn').dataset.postId = post.id;
   }
 }
 
