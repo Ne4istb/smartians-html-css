@@ -10,18 +10,18 @@ section {
   margin-bottom: 50px;
   padding-top: 0.75em;
 
-  border: 1px #d4d7da solid;
+  border: 1px var(--border-color) solid;
   border-radius: 4px;
 
   font-size: 1rem;
 }
 
-.post > * {
-  margin-bottom: 0.75em;
+.post > *:not(.picture-container) {
+  padding: 0 1.25em;
 }
 
-.post > *:not(.picture) {
-  padding: 0 1.25em;
+.post > * {
+  margin-bottom: 0.75em;
 }
 
 .post .info .name,
@@ -58,6 +58,21 @@ section {
 
 .picture {
   width: 100%;
+  position: relative;
+}
+
+.post .picture-container {
+  position: relative;
+}
+
+.dark-theme .post .picture-container::before {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 1;
 }
 
 .actions {
@@ -68,7 +83,7 @@ section {
 .actions .publish-time {
   flex: 1;
 
-  color: #8a959e;
+  color: var(--inactive-color);
   font-size: 0.625em;
 }
 
@@ -90,7 +105,7 @@ section {
 
 .post details summary .more {
   cursor: pointer;
-  color: #8a959e;
+  color: var(--inactive-color);
 }
 
 .post details[open] > summary {
@@ -109,8 +124,8 @@ section {
   left: 1.1em;
   top: -0.6em;
   font-size: 0.75em;
-  background: white;
-  color: #8a959e;
+  background: var(--background-color);
+  color: var(--inactive-color);
   padding: 0 0.5em;
 }
 
@@ -142,7 +157,7 @@ section {
 .new-comment button {
   background: none;
   cursor: pointer;
-  color: #499fea;
+  color: var(--primary-color);
   font-weight: 500;
   outline: none;
 }
@@ -154,5 +169,5 @@ section {
 
 .comments,
 .new-comment {
-  border-top: 1px #d4d7da solid;
+  border-top: 1px var(--border-color) solid;
 }

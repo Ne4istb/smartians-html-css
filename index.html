@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="css/filters.css" />
   </head>
 
-  <body>
+  <body class="dark-theme">
     <header>
       <span>Smartogram</span>
       <nav>
@@ -36,6 +36,15 @@
           </svg>
         </a>
       </nav>
+
+      <div>
+        <input type="checkbox" class="theme-toggle" id="theme" />
+        <label class="theme-label" for="theme">
+          <span class="moon">🌙</span>
+          <span class="sun">☀️</span>
+          <span class="ball"></span>
+        </label>
+      </div>
     </header>
 
     <section>
@@ -48,7 +57,9 @@
             <p class="location"></p>
           </div>
 
-          <img class="picture" src="" loading="lazy" />
+          <div class="picture-container">
+            <img class="picture" src="" loading="lazy" />
+          </div>
 
           <div class="actions">
             <p class="publish-time">30.07.2021, 10:40</p>
@@ -130,6 +141,7 @@
 
     <footer>Copyrights Smartians 2021</footer>
   </body>
+  <script src="js/theme.js" async></script>
   <script src="js/user.js" defer></script>
   <script src="js/storage.js" defer></script>
   <script src="js/feed-page.js" defer></script>

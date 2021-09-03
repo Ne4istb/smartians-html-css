@@ -41,8 +41,8 @@ form > * {
   grid-template-columns: repeat(2, auto);
   align-items: center;
   grid-column-gap: 0.5em;
-  color: #252b33;
-  border: 1px #8a959e solid;
+  color: var(--text-color);
+  border: 1px var(--inactive-color) solid;
 }
 
 .uploader .upload-button label svg {
@@ -68,7 +68,7 @@ form > * {
 
   box-sizing: border-box;
 
-  border: 1px #8a959e solid;
+  border: 1px var(--inactive-color) solid;
   border-radius: 4px;
   outline: none;
 }
@@ -85,15 +85,15 @@ form > * {
 }
 
 .actions button {
-  background: #499fea;
-  color: white;
+  background: var(--primary-color);
+  color: var(--background-color);
   border: none;
 
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 5px 0 var(--panel-shadow-color);
 }
 
 .actions button:hover {
-  background: #3594e6;
+  background: var(--primary-color-hover);
 }
 
 form button,
@@ -107,5 +107,5 @@ form button,
 
 form :is(input, textarea, .select, .upload-button label):hover,
 form :is(input, textarea, .select, .upload-button label):focus {
-  border-color: #252b33;
+  border-color: var(--text-color);
 }

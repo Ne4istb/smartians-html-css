@@ -8,7 +8,7 @@ input[type='checkbox'] {
   width: 1.25em;
   height: 1.25em;
 
-  background: #499fea;
+  background: var(--primary-color);
 
   border-radius: 50%;
   position: relative;
@@ -25,7 +25,7 @@ input[type='checkbox'] {
 
   border-radius: 50%;
 
-  background: white;
+  background: var(--background-color);
 }
 
 .checkbox label .label {
@@ -44,7 +44,7 @@ input[type='checkbox'] {
   height: 0.25em;
   background: transparent;
 
-  border: 0.125em solid #499fea;
+  border: 0.125em solid var(--primary-color);
   border-top: none;
   border-right: none;
 

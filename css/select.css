@@ -18,7 +18,7 @@ select {
   outline: none;
 
   /* Set text color*/
-  color: #252b33;
+  color: var(--text-color);
 }
 
 select,
@@ -35,7 +35,7 @@ select,
   min-width: 15ch;
   max-width: 30ch;
 
-  border: 1px solid #8a959e;
+  border: 1px solid var(--inactive-color);
   padding: 0.5em 0.75em;
 
   font-size: 1rem;
@@ -49,7 +49,7 @@ select,
   justify-self: end;
   width: 0.8em;
   height: 0.5em;
-  background-color: #8a959e;
+  background-color: var(--inactive-color);
   clip-path: polygon(100% 0%, 0 0%, 50% 100%);
 }
 
@@ -59,6 +59,6 @@ select:focus + .focus {
   left: -1px;
   right: -1px;
   bottom: -1px;
-  border: 1px solid #252b33;
+  border: 1px solid var(--text-color);
   border-radius: inherit;
 }
