@@ -18,6 +18,9 @@ section {
 
 .post > * {
   margin-bottom: 0.75em;
+}
+
+.post > *:not(.picture) {
   padding: 0 1.25em;
 }
 
@@ -55,7 +58,6 @@ section {
 
 .picture {
   width: 100%;
-  padding: initial;
 }
 
 .actions {
@@ -91,8 +93,25 @@ section {
   color: #8a959e;
 }
 
+.post details[open] > summary {
+  display: none;
+}
+
 .comments {
   padding-top: 0.75em;
+  position: relative;
+}
+
+.comments::after {
+  content: 'Комментарии';
+  display: block;
+  position: absolute;
+  left: 1.1em;
+  top: -0.6em;
+  font-size: 0.75em;
+  background: white;
+  color: #8a959e;
+  padding: 0 0.5em;
 }
 
 .comments .comment {
@@ -124,6 +143,12 @@ section {
   background: none;
   cursor: pointer;
   color: #499fea;
+  font-weight: 500;
+  outline: none;
+}
+
+.new-comment button:hover,
+.new-comment button:focus {
   font-weight: 600;
 }
 

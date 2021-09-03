@@ -42,7 +42,7 @@ form > * {
   align-items: center;
   grid-column-gap: 0.5em;
   color: #252b33;
-  border: 1px #252b33 solid;
+  border: 1px #8a959e solid;
 }
 
 .uploader .upload-button label svg {
@@ -92,6 +92,10 @@ form > * {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.08);
 }
 
+.actions button:hover {
+  background: #3594e6;
+}
+
 form button,
 .uploader .select,
 .uploader .upload-button label {
@@ -99,4 +103,9 @@ form button,
   padding: 0.5em 0.75em;
   border-radius: 1.25em;
   cursor: pointer;
+}
+
+form :is(input, textarea, .select, .upload-button label):hover,
+form :is(input, textarea, .select, .upload-button label):focus {
+  border-color: #252b33;
 }
