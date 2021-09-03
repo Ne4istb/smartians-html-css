@@ -21,6 +21,7 @@
 
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/feed.css" />
+    <link rel="stylesheet" href="css/filters.css" />
   </head>
 
   <body>
@@ -38,78 +39,92 @@
     </header>
 
     <section>
-      <article class="post">
-        <div class="info">
+      <template id="post">
+        <article class="post">
+          <div class="info">
+            <img
+              class="avatar"
+              src="https://html-css-course.smartians.com/captain-amerika.35706d57.jpg"
+            />
+
+            <p class="name">Superman</p>
+            <p class="location">Kyiv</p>
+          </div>
+
           <img
-            src="https://html-css-course.smartians.com/captain-amerika.35706d57.jpg"
+            class="picture"
+            src="https://ucarecdn.com/4c5af381-8e0d-495f-9e34-aa8878caae57/-/resize/600x/"
+            loading="lazy"
           />
 
-          <p class="name">Superman</p>
-          <p class="location">Kyiv</p>
-        </div>
-
-        <img
-          class="picture"
-          src="https://ucarecdn.com/4c5af381-8e0d-495f-9e34-aa8878caae57/-/resize/600x/"
-          loading="lazy"
-        />
-
-        <div class="actions">
-          <p class="timestamp">30.07.2021, 10:40</p>
-          <div class="buttons">
-            <button class="icon-button">
-              <svg viewBox="0 0 48 48">
-                <path
-                  d="M34.6 6.1c5.7 0 10.4 5.2 10.4 11.5 0 6.8-5.9 11-11.5 16S25 41.3 24 41.9c-1.1-.7-4.7-4-9.5-8.3-5.7-5-11.5-9.2-11.5-16C3 11.3 7.7 6.1 13.4 6.1c4.2 0 6.5 2 8.1 4.3 1.9 2.6 2.2 3.9 2.5 3.9.3 0 .6-1.3 2.5-3.9 1.6-2.3 3.9-4.3 8.1-4.3m0-3c-4.5 0-7.9 1.8-10.6 5.6-2.7-3.7-6.1-5.5-10.6-5.5C6 3.1 0 9.6 0 17.6c0 7.3 5.4 12 10.6 16.5.6.5 1.3 1.1 1.9 1.7l2.3 2c4.4 3.9 6.6 5.9 7.6 6.5.5.3 1.1.5 1.6.5.6 0 1.1-.2 1.6-.5 1-.6 2.8-2.2 7.8-6.8l2-1.8c.7-.6 1.3-1.2 2-1.7C42.7 29.6 48 25 48 17.6c0-8-6-14.5-13.4-14.5z"
-                ></path>
-              </svg>
-            </button>
-            <button class="icon-button">
-              <svg viewBox="0 0 48 48">
-                <path
-                  d="M43.5 48c-.4 0-.8-.2-1.1-.4L24 29 5.6 47.6c-.4.4-1.1.6-1.6.3-.6-.2-1-.8-1-1.4v-45C3 .7 3.7 0 4.5 0h39c.8 0 1.5.7 1.5 1.5v45c0 .6-.4 1.2-.9 1.4-.2.1-.4.1-.6.1zM24 26c.8 0 1.6.3 2.2.9l15.8 16V3H6v39.9l15.8-16c.6-.6 1.4-.9 2.2-.9z"
-                ></path>
-              </svg>
-            </button>
+          <div class="actions">
+            <p class="publish-time">30.07.2021, 10:40</p>
+            <div class="buttons">
+              <button class="icon-button">
+                <svg viewBox="0 0 48 48">
+                  <path
+                    d="M34.6 6.1c5.7 0 10.4 5.2 10.4 11.5 0 6.8-5.9 11-11.5 16S25 41.3 24 41.9c-1.1-.7-4.7-4-9.5-8.3-5.7-5-11.5-9.2-11.5-16C3 11.3 7.7 6.1 13.4 6.1c4.2 0 6.5 2 8.1 4.3 1.9 2.6 2.2 3.9 2.5 3.9.3 0 .6-1.3 2.5-3.9 1.6-2.3 3.9-4.3 8.1-4.3m0-3c-4.5 0-7.9 1.8-10.6 5.6-2.7-3.7-6.1-5.5-10.6-5.5C6 3.1 0 9.6 0 17.6c0 7.3 5.4 12 10.6 16.5.6.5 1.3 1.1 1.9 1.7l2.3 2c4.4 3.9 6.6 5.9 7.6 6.5.5.3 1.1.5 1.6.5.6 0 1.1-.2 1.6-.5 1-.6 2.8-2.2 7.8-6.8l2-1.8c.7-.6 1.3-1.2 2-1.7C42.7 29.6 48 25 48 17.6c0-8-6-14.5-13.4-14.5z"
+                  ></path>
+                </svg>
+              </button>
+              <button class="icon-button">
+                <svg viewBox="0 0 48 48">
+                  <path
+                    d="M43.5 48c-.4 0-.8-.2-1.1-.4L24 29 5.6 47.6c-.4.4-1.1.6-1.6.3-.6-.2-1-.8-1-1.4v-45C3 .7 3.7 0 4.5 0h39c.8 0 1.5.7 1.5 1.5v45c0 .6-.4 1.2-.9 1.4-.2.1-.4.1-.6.1zM24 26c.8 0 1.6.3 2.2.9l15.8 16V3H6v39.9l15.8-16c.6-.6 1.4-.9 2.2-.9z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
           </div>
-        </div>
 
-        <details>
-          <summary>
-            <span
-              >Комиксам в том виде, в каком мы их знаем, уже больше века.</span
-            ><span class="more">показать</span>
-          </summary>
-          <p>
-            Комиксам в том виде, в каком мы их знаем, уже больше века. Всё это
-            время они развивались, становились сложнее, оказывались в эпицентре
-            общественных конфликтов, превращались в острые социальные
-            комментарии и получали почётные премии. Но до сих пор многие (и даже
-            целый министр!) считают комиксы чем-то ущербным и пригодным только
-            для маленьких детей и глупых подростков. Мы собрали самые популярные
-            стереотипы о комиксах и попробовали объяснить, почему они неверны и
-            комиксы достойны внимания.
-          </p>
-        </details>
+          <details class="text">
+            <summary>
+              <span class="summary"
+                >Комиксам в том виде, в каком мы их знаем, уже больше
+                века.</span
+              ><span class="more">показать</span>
+            </summary>
+            <p>
+              Комиксам в том виде, в каком мы их знаем, уже больше века. Всё это
+              время они развивались, становились сложнее, оказывались в
+              эпицентре общественных конфликтов, превращались в острые
+              социальные комментарии и получали почётные премии. Но до сих пор
+              многие (и даже целый министр!) считают комиксы чем-то ущербным и
+              пригодным только для маленьких детей и глупых подростков. Мы
+              собрали самые популярные стереотипы о комиксах и попробовали
+              объяснить, почему они неверны и комиксы достойны внимания.
+            </p>
+          </details>
 
-        <div class="comments">
-          <p class="comment">
-            <span class="author">Superman</span>
-            <span class="text">Я тоже иногда почитываю)</span>
-          </p>
+          <div class="comments">
+            <p class="comment">
+              <span class="author">Superman</span>
+              <span class="text">Я тоже иногда почитываю)</span>
+            </p>
 
-          <p class="comment">
-            <span class="author">Hulk</span>
-            <span class="text">А я даже снимаюсь в фильмах по ним! =)</span>
-          </p>
-        </div>
-        <form class="new-comment">
-          <input placeholder="Добавить комментарий" />
-          <button>Опубликовать</button>
-        </form>
-      </article>
+            <p class="comment">
+              <span class="author">Hulk</span>
+              <span class="text">А я даже снимаюсь в фильмах по ним! =)</span>
+            </p>
+          </div>
+          <form class="new-comment">
+            <input placeholder="Добавить комментарий" />
+            <button>Опубликовать</button>
+          </form>
+        </article>
+      </template>
+
+      <template id="comment">
+        <p class="comment">
+          <span class="author">Hulk</span>
+          <span class="text">А я даже снимаюсь в фильмах по ним! =)</span>
+        </p>
+      </template>
     </section>
 
     <footer>Copyrights Smartians 2021</footer>
   </body>
+  <script src="js/user.js" defer></script>
+  <script src="js/storage.js" defer></script>
+  <script src="js/feed-page.js" defer></script>
 </html>

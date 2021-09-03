@@ -55,7 +55,7 @@ form > * {
 
 .preview-image {
   width: 100%;
-  display: block;
+  display: none;
 }
 
 .post textarea,

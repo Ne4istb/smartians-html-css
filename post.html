@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="css/post.css" />
     <link rel="stylesheet" href="css/select.css" />
     <link rel="stylesheet" href="css/checkbox.css" />
+    <link rel="stylesheet" href="css/filters.css" />
   </head>
 
   <body>
@@ -44,7 +45,7 @@
       <form>
         <div class="uploader">
           <div class="upload-button">
-            <label for="photo">
+            <label for="uploader">
               <svg viewBox="0 0 24 24">
                 <path
                   fill="currentColor"
@@ -53,15 +54,20 @@
               </svg>
               Загрузить фото
             </label>
-            <input id="photo" type="file" />
+            <input
+              id="uploader"
+              type="file"
+              onchange="selectFile(event)"
+              accept="image/*"
+            />
           </div>
 
-          <div class="select">
-            <select>
-              <option>Фильтр(не выбран)</option>
-              <option>Инверт</option>
-              <option>Серый</option>
-              <option>Сепия</option>
+          <div class="select" onchange="changeFilter()">
+            <select id="filter">
+              <option value="0">Фильтр(не выбран)</option>
+              <option value="1">Инверт</option>
+              <option value="2">Серый</option>
+              <option value="3">Сепия</option>
             </select>
           </div>
         </div>
@@ -92,11 +98,14 @@
               ><span class="label">Разрешить комментарии</span></label
             >
           </div>
-          <button>Создать</button>
+          <button onclick="submitForm(event)">Создать</button>
         </div>
       </form>
     </section>
 
     <footer>Copyrights Smartians 2021</footer>
   </body>
+  <script src="js/user.js" defer></script>
+  <script src="js/storage.js" defer></script>
+  <script src="js/post-page.js" defer></script>
 </html>
