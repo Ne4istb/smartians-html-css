@@ -77,6 +77,10 @@ footer {
   font-size: 0.75em;
 }
 
+nav a {
+  display: block;
+}
+
 section {
   overflow: auto;
 }
@@ -95,12 +99,44 @@ p {
   color: var(--text-color);
 
   font-size: 1em;
+
+  position: relative;
 }
 
 .icon-button svg {
   fill: currentColor;
   width: 1.5em;
   height: 1.5em;
+}
+
+.icon-button:not([data-tooltip]):hover::after,
+.icon-button:not([data-tooltip]):hover::before {
+  display: none;
+}
+
+.icon-button:hover:after {
+  content: attr(data-tooltip);
+  padding: 0.125em 0.5em;
+  background: var(--text-color);
+  color: var(--background-color);
+  right: calc(100% + 0.5em);
+  position: absolute;
+  border-radius: 0.5em;
+  font-size: 0.875em;
+  width: max-content;
+}
+
+.icon-button:hover:before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-top: 0.5em solid transparent;
+  border-bottom: 0.5em solid transparent;
+  border-left: 0.5em solid var(--text-color);
+  right: calc(100% + 0.25em);
+  top: 0.25em;
 }
 
 .hidden {
