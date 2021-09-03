@@ -47,6 +47,7 @@ form > * {
 
 .uploader .upload-button label svg {
   height: 1em;
+  justify-self: center;
 }
 
 .uploader .select {
@@ -108,4 +109,39 @@ form button,
 form :is(input, textarea, .select, .upload-button label):hover,
 form :is(input, textarea, .select, .upload-button label):focus {
   border-color: var(--text-color);
+}
+
+@media screen and (max-width: 800px) {
+  form {
+    max-width: calc(100vw - 2 * 1rem);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .uploader {
+    display: grid;
+    grid-row-gap: 1em;
+    justify-content: center;
+  }
+
+  .uploader .select {
+    margin: 0;
+  }
+
+  .uploader .upload-button {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .actions {
+    display: grid;
+    justify-content: stretch;
+    grid-row-gap: 1em;
+  }
+
+  form > * {
+    margin: 1em 0;
+  }
 }

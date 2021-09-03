@@ -8,6 +8,8 @@
       content="Smartogram - разработка инстаграмма в учебыных целях"
     />
 
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <link
       href="https://fonts.googleapis.com/css?family=Rubik&display=swap"
       rel="stylesheet"
@@ -58,7 +60,16 @@
           </div>
 
           <div class="picture-container">
-            <img class="picture" src="" loading="lazy" />
+            <img
+              class="picture"
+              srcset=""
+              sizes="
+                (max-width: 400px) 400px,
+                (max-width: 500px) 500px,
+                600px
+              "
+              loading="lazy"
+            />
           </div>
 
           <div class="actions">
