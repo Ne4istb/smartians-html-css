@@ -2,11 +2,14 @@ section {
   display: grid;
   grid-template-rows: auto 1fr;
   justify-content: center;
+
+  font-size: 1rem;
 }
 
 form,
 h1 {
   width: 800px;
+  max-width: 80vw;
 }
 
 h1 {
@@ -14,16 +17,40 @@ h1 {
 }
 
 form {
-  min-height: 500px;
   box-sizing: border-box;
 }
 
 form > * {
-  margin: 32px 0;
+  margin: 2em 0;
 }
 
-.uploader select {
-  margin-left: 24px;
+.uploader {
+  display: flex;
+  align-items: center;
+}
+
+.uploader .upload-button input {
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  opacity: 0;
+}
+
+.uploader .upload-button label {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  align-items: center;
+  grid-column-gap: 0.5em;
+  color: #252b33;
+  border: 1px #252b33 solid;
+}
+
+.uploader .upload-button label svg {
+  height: 1em;
+}
+
+.uploader .select {
+  margin-left: 1.5em;
 }
 
 .preview-image {
@@ -36,18 +63,40 @@ form > * {
   display: block;
 
   width: 100%;
-  margin-top: 8px;
-  padding: 10px;
+  margin-top: 0.5em;
+  padding: 0.75em;
 
   box-sizing: border-box;
+
+  border: 1px #8a959e solid;
+  border-radius: 4px;
+  outline: none;
 }
 
 .post textarea {
-  height: 100px;
+  height: 6em;
+  resize: vertical;
 }
 
 .actions {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.actions button {
+  background: #499fea;
+  color: white;
+  border: none;
+
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.08);
+}
+
+form button,
+.uploader .select,
+.uploader .upload-button label {
+  font-size: 1em;
+  padding: 0.5em 0.75em;
+  border-radius: 1.25em;
+  cursor: pointer;
 }
