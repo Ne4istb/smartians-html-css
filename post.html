@@ -16,11 +16,42 @@
   </head>
 
   <body>
-    <header>Верхняя панель</header>
+    <header>Smartogram</header>
 
-    <nav></nav>
+    <nav>
+      <a href="index.html">Лента</a>
+    </nav>
 
-    <section></section>
+    <section>
+      <h1>Новый пост</h1>
+      <form>
+        <label for="photo">Фото</label>
+        <input id="photo" type="file" />
+
+        <select>
+          <option>Фильтр(не выбран)</option>
+          <option>Инверт</option>
+          <option>Серый</option>
+          <option>Сепия</option>
+        </select>
+
+        <img
+          src="https://i.pinimg.com/originals/f4/d2/96/f4d2961b652880be432fb9580891ed62.png"
+          alt="Загруженное фото"
+        />
+
+        <label for="text">Текст поста</label>
+        <textarea id="text" placeholder="Добавьте сюда текст поста"></textarea>
+
+        <label for="location">Локация</label>
+        <input id="location" placeholder="Например, Киев" />
+
+        <input id="comments" type="checkbox" checked="checked" />
+        <label for="comments">Разрешить комментарии</label>
+
+        <button>Создать</button>
+      </form>
+    </section>
 
     <footer>Copyrights Smartians 2021</footer>
   </body>
