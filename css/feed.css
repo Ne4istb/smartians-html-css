@@ -5,28 +5,31 @@ section {
 }
 
 .post {
-  width: 600px;
+  max-width: 600px;
+  width: 80vw;
   margin-bottom: 50px;
-  padding-top: 12px;
+  padding-top: 0.75em;
 
   border: 1px #d4d7da solid;
   border-radius: 4px;
+
+  font-size: 1rem;
 }
 
 .post > * {
-  margin-bottom: 12px;
-  padding: 0 20px;
+  margin-bottom: 0.75em;
+  padding: 0 1.25em;
 }
 
 .post .info .name,
 .post details,
 .post .comments .comment,
 .post .new-comment > * {
-  font-size: 14px;
+  font-size: 0.875em;
 }
 
 .post .info .location {
-  font-size: 12px;
+  font-size: 0.75em;
 }
 
 .post .info .name,
@@ -37,12 +40,12 @@ section {
 .post .info {
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-column-gap: 12px;
+  grid-column-gap: 0.75em;
 }
 
 .post .info img {
-  width: 32px;
-  height: 32px;
+  width: 2em;
+  height: 2em;
 
   grid-row-start: 1;
   grid-row-end: 3;
@@ -64,11 +67,11 @@ section {
   flex: 1;
 
   color: #8a959e;
-  font-size: 10px;
+  font-size: 0.625em;
 }
 
 .actions .buttons button {
-  margin-left: 12px;
+  margin-left: 0.75em;
 }
 
 .post details {
@@ -85,15 +88,15 @@ section {
 }
 
 .comments {
-  padding-top: 12px;
+  padding-top: 0.75em;
 }
 
 .comments .comment {
-  margin-bottom: 12px;
+  margin-bottom: 0.75em;
 }
 
 .comments .comment .name {
-  margin-right: 8px;
+  margin-right: 0.5em;
 }
 
 .new-comment {
@@ -102,13 +105,14 @@ section {
 }
 
 .new-comment > * {
-  padding: 12px 0;
+  padding: 0.75em 0;
   border: none;
+  font-size: 1em;
 }
 
 .new-comment input {
   flex: 1;
-  margin-right: 8px;
+  margin-right: 0.5em;
   outline: none;
 }
 
