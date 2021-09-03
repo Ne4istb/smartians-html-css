@@ -16,40 +16,58 @@
   </head>
 
   <body>
-    <header>Smartogram</header>
-
-    <nav>
-      <a href="index.html">Лента</a>
-    </nav>
+    <header>
+      <span>Smartogram</span>
+      <nav>
+        <a href="index.html">Лента</a>
+      </nav>
+    </header>
 
     <section>
       <h1>Новый пост</h1>
-      <form>
-        <label for="photo">Фото</label>
-        <input id="photo" type="file" />
+      <form style="min-height: 500px; width: 100%; box-sizing: border-box;">
+        <div style="margin: 32px 0;">
+          <label for="photo">Фото</label>
+          <input id="photo" type="file" />
 
-        <select>
-          <option>Фильтр(не выбран)</option>
-          <option>Инверт</option>
-          <option>Серый</option>
-          <option>Сепия</option>
-        </select>
+          <select>
+            <option>Фильтр(не выбран)</option>
+            <option>Инверт</option>
+            <option>Серый</option>
+            <option>Сепия</option>
+          </select>
+        </div>
 
         <img
           src="https://i.pinimg.com/originals/f4/d2/96/f4d2961b652880be432fb9580891ed62.png"
           alt="Загруженное фото"
+          style="width: 100%; display: block;"
         />
 
-        <label for="text">Текст поста</label>
-        <textarea id="text" placeholder="Добавьте сюда текст поста"></textarea>
+        <div style="margin: 32px 0;">
+          <label for="text">Текст поста</label>
+          <textarea
+            id="text"
+            placeholder="Добавьте сюда текст поста"
+            style="box-sizing: border-box; padding: 12px"
+          ></textarea>
+        </div>
 
-        <label for="location">Локация</label>
-        <input id="location" placeholder="Например, Киев" />
+        <div style="margin: 32px 0;">
+          <label for="location">Локация</label>
+          <input
+            id="location"
+            placeholder="Например, Киев"
+            style="box-sizing: border-box; padding: 10px"
+          />
+        </div>
 
-        <input id="comments" type="checkbox" checked="checked" />
-        <label for="comments">Разрешить комментарии</label>
+        <div style="margin: 32px 0;">
+          <input id="comments" type="checkbox" checked="checked" />
+          <label for="comments">Разрешить комментарии</label>
 
-        <button>Создать</button>
+          <button>Создать</button>
+        </div>
       </form>
     </section>
 
