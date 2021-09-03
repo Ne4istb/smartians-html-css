@@ -1,0 +1,20 @@
+form {
+  min-height: 500px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+form > * {
+  margin: 32px 0;
+}
+
+.preview-image {
+  width: 100%;
+  display: block;
+}
+
+.post textarea,
+.location input {
+  box-sizing: border-box;
+  padding: 10px;
+}

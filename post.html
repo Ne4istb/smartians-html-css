@@ -13,11 +13,13 @@
       type="image/png"
       href="https://github.com/Ne4istb/smartians-html-css/raw/master/assets/favicon.png"
     />
+
+    <link rel="stylesheet" href="css/post.css" />
   </head>
 
   <body>
     <header>
-      <span>Smartogram</span>
+      <span>Верхняя панель</span>
       <nav>
         <a href="index.html">Лента</a>
       </nav>
@@ -25,8 +27,8 @@
 
     <section>
       <h1>Новый пост</h1>
-      <form style="min-height: 500px; width: 100%; box-sizing: border-box;">
-        <div style="margin: 32px 0;">
+      <form>
+        <div>
           <label for="photo">Фото</label>
           <input id="photo" type="file" />
 
@@ -41,28 +43,23 @@
         <img
           src="https://i.pinimg.com/originals/f4/d2/96/f4d2961b652880be432fb9580891ed62.png"
           alt="Загруженное фото"
-          style="width: 100%; display: block;"
+          class="preview-image"
         />
 
-        <div style="margin: 32px 0;">
+        <div class="post">
           <label for="text">Текст поста</label>
           <textarea
             id="text"
             placeholder="Добавьте сюда текст поста"
-            style="box-sizing: border-box; padding: 12px"
           ></textarea>
         </div>
 
-        <div style="margin: 32px 0;">
+        <div class="location">
           <label for="location">Локация</label>
-          <input
-            id="location"
-            placeholder="Например, Киев"
-            style="box-sizing: border-box; padding: 10px"
-          />
+          <input id="location" placeholder="Например, Киев" />
         </div>
 
-        <div style="margin: 32px 0;">
+        <div>
           <input id="comments" type="checkbox" checked="checked" />
           <label for="comments">Разрешить комментарии</label>
 
