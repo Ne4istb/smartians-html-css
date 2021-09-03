@@ -1,11 +1,24 @@
+form,
+h1 {
+  width: 800px;
+}
+
+h1 {
+  text-align: center;
+}
+
 form {
   min-height: 500px;
-  width: 100%;
+  margin: 0 auto;
   box-sizing: border-box;
 }
 
 form > * {
   margin: 32px 0;
+}
+
+.uploader select {
+  margin-left: 24px;
 }
 
 .preview-image {
@@ -15,6 +28,19 @@ form > * {
 
 .post textarea,
 .location input {
-  box-sizing: border-box;
+  display: block;
+
+  width: 100%;
+  margin-top: 8px;
   padding: 10px;
+
+  box-sizing: border-box;
+}
+
+.post textarea {
+  height: 100px;
+}
+
+button {
+  float: right;
 }
